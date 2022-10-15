@@ -43,14 +43,6 @@ const useViewportTracker = (ref) => {
     }
   }, [ref, isVisible])
 
-  if (!isVisible) {
-    return {
-      isVisible,
-      // scrollFraction: 0,
-      topFraction: 0
-    }
-  }
-
   return {
     isVisible,
     // scrollFraction,

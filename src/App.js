@@ -6,7 +6,11 @@ function App() {
   return (
     <div className="App">
       {mobydick.split("\n").map((paragraph, index) => (
-        <Paragraph key={index} text={paragraph} />
+        <Paragraph
+          key={index}
+          index={index}
+          text={paragraph}
+        />
       ))}
     </div>
   );
