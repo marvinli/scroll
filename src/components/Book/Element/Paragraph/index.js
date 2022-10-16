@@ -1,8 +1,10 @@
+import "./index.css";
+
 function Paragraph(props) {
   const { value } = props;
 
   return (
-    <div>
+    <div className="container">
       {value[0]}
     </div>
   );

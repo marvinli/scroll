@@ -1,7 +1,11 @@
 import Paragraph from "./Paragraph";
+import CheckerFade from "./CheckerFade";
+import Header from "./Header";
 
 const mapping = {
-  paragraph: Paragraph
+  checkerfade: CheckerFade,
+  paragraph: Paragraph,
+  header: Header,
 };
 
 function Element(props) {
