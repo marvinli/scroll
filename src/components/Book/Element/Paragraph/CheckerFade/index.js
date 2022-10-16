@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import CheckerFadeChar from "./CheckerFadeChar";
-import useViewportTracker from '../../../hooks/useViewportTracker';
+import useViewportTracker from '../../../../../hooks/useViewportTracker';
 
 function CheckerFade(props) {
   const { text } = props;
