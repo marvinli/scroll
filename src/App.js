@@ -1,16 +1,16 @@
 import style from './App.module.css';
 // import mobyDick from './text/mobyDick';
 import testBook from './text/testBook';
-import Book from './components/Book';
+import BookContents from './components/BookContents';
 import { BackgroundVideoProvider } from './contexts/BackgroundVideoContext';
 import BackgroundVideo from './components/BackgroundVideo';
 
 function App() {
   return (
-    <div className={style.App}>
+    <div className={style.container}>
       <BackgroundVideoProvider>
         <BackgroundVideo />
-        <Book contents={testBook.contents} />
+        <BookContents contents={testBook.contents} />
       </BackgroundVideoProvider>
     </div>
   );

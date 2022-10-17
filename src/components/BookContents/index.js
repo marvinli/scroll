@@ -1,7 +1,7 @@
 import style from './index.module.css';
 import Element from './Element';
 
-function Book(props) {
+function BookContents(props) {
   const { contents } = props;
   return (
     <div className={style.book}>
@@ -12,4 +12,4 @@ function Book(props) {
   )
 };
 
-export default Book;
+export default BookContents;
