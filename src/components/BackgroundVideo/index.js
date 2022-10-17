@@ -22,8 +22,15 @@ function BackgroundVideo() {
   }
 
   return (
-    <video className={style.video} ref={videoRef} style={{ opacity: opacity }}>
-      <source src={`/assets/${src}`} type="video/mp4" />
+    <video
+      className={style.video}
+      ref={videoRef}
+      style={{ opacity: opacity }}
+      muted
+      playsInline
+      autoPlay
+    >
+      <source src={`assets/${src}`} type="video/mp4" />
     </video>
   )
 }
