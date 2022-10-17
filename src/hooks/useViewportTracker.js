@@ -42,7 +42,7 @@ function useViewportTracker(ref) {
 
       const refHeight = ref.current.offsetHeight;
       const percent = Math.min(
-        Math.max((winHeight - distanceTop)/refHeight, 0),
+        Math.max((winHeight - distanceTop)/(refHeight + winHeight), 0),
         1
       );
       setScrollFraction(percent);

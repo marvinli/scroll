@@ -7,7 +7,7 @@ import squish from '../../../../helpers/range';
 function Video(props) {
   const { value } = props;
   const containerRef = useRef(null);
-  const { topFraction, bottomFraction } = useViewportTracker(containerRef);
+  const { scrollFraction } = useViewportTracker(containerRef);
   const { setSrc, setPercent, setOpacity } = useContext(BackgroundVideoContext);
 
   useEffect(() => {
@@ -15,21 +15,17 @@ function Video(props) {
   }, [value, setSrc]);
 
   useEffect(() => {
-    const percent = squish(topFraction, 0.5, 1);
-    setPercent(percent);
-  }, [topFraction, setPercent]);
-
-  useEffect(() => {
-    let opacity;
-    if (topFraction < 0.7) {
-      // Fade in when top is 30% up
-      opacity = squish(topFraction, 0.5, 0.7);
+    if (scrollFraction < 0.4) {
+      setPercent(0.01);
+      setOpacity(squish(scrollFraction, 0.3, 0.4));
+    } else if (scrollFraction < 0.6) {
+      setPercent(Math.max(squish(scrollFraction, 0.4, 0.6), 0.01));
+      setOpacity(1);
     } else {
-      // Fade out when bottom is 30% up
-      opacity = 1 - squish(bottomFraction, 0.3, 0.7);
+      setPercent(1);
+      setOpacity(1 - squish(scrollFraction, 0.6, 0.7));
     }
-    setOpacity(opacity);
-  }, [topFraction, bottomFraction, setOpacity]);
+  }, [scrollFraction, setPercent, setOpacity]);
 
   return (
     <div className={style.video} ref={containerRef} />
