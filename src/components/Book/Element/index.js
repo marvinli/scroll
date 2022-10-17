@@ -1,11 +1,13 @@
 import Paragraph from "./Paragraph";
 import CheckerFade from "./CheckerFade";
 import Header from "./Header";
+import Video from "./Video";
 
 const mapping = {
   checkerfade: CheckerFade,
   paragraph: Paragraph,
   header: Header,
+  video: Video,
 };
 
 function Element(props) {

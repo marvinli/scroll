@@ -3,7 +3,7 @@ function Header(props) {
   
   return (
     <h1>
-      {value[0]}
+      {value}
     </h1>
   )
 

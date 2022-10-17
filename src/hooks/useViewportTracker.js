@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useViewportTracker = (ref) => {
+function useViewportTracker(ref) {
   const [isVisible, setIsVisible] = useState(false);
   // const [scrollFraction, setScrollFraction] = useState(0);
   const [topFraction, setTopFraction] = useState(0);
@@ -48,6 +48,6 @@ const useViewportTracker = (ref) => {
     // scrollFraction,
     topFraction,
   };
-};
+}
 
 export default useViewportTracker;

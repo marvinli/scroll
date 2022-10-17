@@ -11,7 +11,7 @@ function CheckerFadeChar(props) {
   );
 
   return (
-    <span style={{ opacity: opacity * opacity }}>
+    <span style={{ opacity }}>
       {char}
     </span>
   );

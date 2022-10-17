@@ -1,11 +1,11 @@
-import "./index.css";
+import style from "./index.module.css";
 
 function Paragraph(props) {
   const { value } = props;
 
   return (
-    <div className="container">
-      {value[0]}
+    <div className={style.container}>
+      {value}
     </div>
   );
 }

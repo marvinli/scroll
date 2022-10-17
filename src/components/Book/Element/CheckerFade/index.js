@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import './index.css';
+import style from './index.module.css';
 import CheckerFadeChar from "./CheckerFadeChar";
 import useViewportTracker from '../../../../hooks/useViewportTracker';
 
@@ -8,10 +8,9 @@ function CheckerFade(props) {
   const containerRef = useRef(null);
   const { topFraction } = useViewportTracker(containerRef);
   
-  const text = value[0];
   return (
-    <div ref={containerRef} className="container">
-      {text.split("").map((char, index) => (
+    <div ref={containerRef} className={style.container}>
+      {value.split("").map((char, index) => (
         <CheckerFadeChar
           char={char}
           key={index}
