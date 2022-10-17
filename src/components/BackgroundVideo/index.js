@@ -3,7 +3,7 @@ import { BackgroundVideoContext } from "../../contexts/BackgroundVideoContext";
 import style from "./index.module.css";
 
 function BackgroundVideo() {
-  const { src, percent } = useContext(BackgroundVideoContext);
+  const { src, percent, opacity } = useContext(BackgroundVideoContext);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -18,13 +18,11 @@ function BackgroundVideo() {
   }, [videoRef, src, percent]);
 
   if (!src || percent === 0) {
-    return (
-      <div className={style.video} />
-    );
+    return null;
   }
 
   return (
-    <video className={style.video} ref={videoRef}>
+    <video className={style.video} ref={videoRef} style={{ opacity: opacity }}>
       <source src={`/assets/${src}`} type="video/mp4" />
     </video>
   )
